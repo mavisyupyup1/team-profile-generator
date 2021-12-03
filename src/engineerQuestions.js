@@ -21,7 +21,7 @@ module.exports=[
         name:'id',
         message:"What is the engineer's ID?",
         validate: id=>{
-            const valid = /^\d+$/.test(engineerId);
+            const valid = /^\d+$/.test(id);
             if(valid){
                 return true;
             } else {
