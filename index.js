@@ -1,7 +1,7 @@
-// const Employee =require('./lib/Employee')
-// const Manager = require('./lib/Manager')
-// const Engineer = require('./lib/Engineer')
-// const Intern = require('./lib/Intern')
+const Employee =require('./lib/Employee')
+const Manager = require('./lib/Manager')
+const Engineer = require('./lib/Engineer')
+const Intern = require('./lib/Intern')
 
 const managerQuestions = require('./src/managerQuestions')
 const teamQuestions = require('./src/teamQuestions')
@@ -24,28 +24,30 @@ function appMenu(){
         console.log("Hi Manager,let's built your team:")
         inquirer.prompt(managerQuestions)
         .then(answers=>{
-            const manager = new Manager(answers.name,answers.id,answers.email,answers.office)
+            const manager = new Manager(answers.name,answers.id,answers.email,answers.office, role)
             teamMembers.push(manager);
-            idArray.push(answers.managerId)
+            console.log(teamMembers)
+            idArray.push(answers.id)
+            console.log(idArray)
             addTeamMember();
         })
     }
     createManager();
-
     
     function addTeamMember(){
         inquirer.prompt(teamQuestions)
         .then(answers=>{
-        //call engineer func->ask for engineer->create engineer ->
-        //call intern func
-        //bye(call gen html func)
+     
         switch(answers.addMember){
+            //call engineer func->ask for engineer->create engineer ->
             case 'Engineer':
             createEngineer();
             break;
+            //call intern func
             case 'Intern':
             createIntern();
             break;
+            //bye(call gen html func)
             case 'I am done adding team members':
             buildTeam();
             break;
@@ -55,7 +57,11 @@ function appMenu(){
     function createEngineer(){
         inquirer.prompt(engineerQuestions)
         .then(answers=>{
-          console.log('engineer')
+          const engineer = new Engineer (answers.name, answers.id, answers.email,answers.github,role)
+          teamMembers.push(engineer)
+          console.log(teamMembers)
+          idArray.push(engineer.id)
+          console.log(idArray)
           addTeamMember();
         })
        
@@ -63,8 +69,12 @@ function appMenu(){
     function createIntern(){
         inquirer.prompt(internQuestions)
         .then(answers=>{
-          console.log('intern')
-          addTeamMember();
+        const intern = new Intern (answers.name, answers.id, answers.email, answers.school, role)
+        teamMembers.push(intern)
+        console.log(teamMembers)
+        idArray.push(intern.id)
+        console.log(idArray)
+        addTeamMember();
         })
     }
     //build team.html

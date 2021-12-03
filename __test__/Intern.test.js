@@ -6,6 +6,7 @@ it ("creates an intern object",()=>{
     expect(intern.name).toBe('Carl')
     expect(intern.id).toEqual(4)
     expect(intern.email).toEqual(expect.any(String))
+    expect(intern.role).toBe('Intern')
 })
 it ("gets the intern role", ()=>{
     const intern = new Intern ('Carl',4,'carl@asd.com','columbia university')

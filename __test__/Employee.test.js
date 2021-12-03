@@ -5,6 +5,7 @@ test ('creates an employee object',()=>{
     expect(employee.name).toBe('Roger');
     expect(employee.id).toEqual(expect.any(Number));
     expect(employee.email).toEqual(expect.any(String));
+    expect(employee.role).toBe('Employee')
 
 })
 

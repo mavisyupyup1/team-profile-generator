@@ -4,10 +4,10 @@
 module.exports=[
     {
         type:'input',
-        name:'engineerName',
+        name:'name',
         message:"What is the engineer's name?", 
-        validate: engineerName=>{
-            if(engineerName){
+        validate: name=>{
+            if(name){
                 return true;
             } else {
                 console.log("\n Please enter the engineer's name.")
@@ -18,9 +18,9 @@ module.exports=[
     },
     {
         type:'input',
-        name:'engineerId',
+        name:'id',
         message:"What is the engineer's ID?",
-        validate: engineerId=>{
+        validate: id=>{
             const valid = /^\d+$/.test(engineerId);
             if(valid){
                 return true;
@@ -33,10 +33,10 @@ module.exports=[
     },
     {
         type:'input',
-        name: 'engineerEmail',
+        name: 'email',
         message:"What is the engineer's email?",
-        validate: engineerEmail=>{
-            const valid = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/.test(engineerEmail)
+        validate: email=>{
+            const valid = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/.test(email)
             if(valid){
                 return true;
             } else {
