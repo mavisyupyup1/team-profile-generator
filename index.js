@@ -12,7 +12,7 @@ const inquirer = require ('inquirer');
 const path = require('path')
 const fs = require('fs')
 
-const OUTPUT_DIR = path.resolve(__dirname,"output")
+const OUTPUT_DIR = path.resolve(__dirname,"dist")
 const outputPath = path.join(OUTPUT_DIR,"team.html")
 const render = require('./lib/render')
 
@@ -45,7 +45,9 @@ function appMenu(){
                 break;
                 //bye(call gen html function)
                 case 'I am done adding team members':
-                    generateTeam()
+                console.log ('Thank you for your input, generation website')    
+                generateTeam()
+
             } 
         })
            
@@ -75,6 +77,7 @@ function appMenu(){
 
 //generateTeam function call the "render" function (required above) and pass in the teamMembers array containing all employee object. once it's rendered, the returned block of html will be saved in an teamMember.html file saved in the outputPath (specified above) location.
 function generateTeam(){fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
+console.log("File generated! Check it out at "+ outputPath )
 }
 //start
 appMenu()
