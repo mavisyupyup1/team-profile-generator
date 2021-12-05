@@ -24,8 +24,7 @@ Users will be prompted to enter information about:
 
 Once the information has been entered and validated, a webpage will be generated and can be viewed in the dist folder.
 ## Demo
-[walk_though_vide](https://watch.screencastify.com/v/TfzEmkBJ6BrNGPTGId2B)
-
+[walk_though_vide](https://watch.screencastify.com/v/ZD5TuCiDpRTURUuTy10F)
 ![demo_output](assets/images/Team_Profiel_Demo.png)
 
 ## License
